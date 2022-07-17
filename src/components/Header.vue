@@ -16,12 +16,23 @@ const navList = reactive([
 </script>
 
 <template>
-  <nav text-xl mt-6>
-    <div class="logo"></div>
-    <ul class="navigation">
-      <li v-for="(nav, index) in navList" :key="index">
-        {{ nav.name }}
-      </li>
-    </ul>
+  <nav class="header"
+    fixed 
+    left-0
+    top-0
+    width-100%
+    py-4 
+    text-xl
+  >
+    <div class="header-warp" px-2>
+      <div class="logo">
+        <img src="../../public/logo_b@2x.png" alt="logo">
+      </div>
+      <ul class="navigation">
+        <li v-for="(nav, index) in navList" :key="index">
+          {{ nav.name }}
+        </li>
+      </ul>
+    </div>
   </nav>
 </template>
