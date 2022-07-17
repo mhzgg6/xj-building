@@ -12,6 +12,8 @@ const { t } = useI18n()
 </script>
 
 <template>
+  <div>小杨杨</div>
+
   <div>
     <div text-4xl>
       <div i-carbon-campsite inline-block />
