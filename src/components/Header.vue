@@ -11,18 +11,18 @@ const navList = reactive([
   { name: '项目', path: '/project' },
   { name: '媒体', path: '/media' },
   { name: '招聘', path: '/work' },
-  { name: '联系', path: '/contact' }
+  { name: '联系', path: '/contact' },
 ])
 </script>
 
 <template>
-  <nav class="header"
-    fixed 
+  <nav
+    fixed
     left-0
     top-0
-    width-100%
-    py-4 
+    py-4
     text-xl
+    class="header w-100%"
   >
     <div class="header-warp" px-2>
       <div class="logo">
