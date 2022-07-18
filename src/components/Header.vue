@@ -22,13 +22,19 @@ const navList = reactive([
     top-0
     py-4
     text-xl
+    z-100
+    bg-red
     class="header w-100%"
   >
     <div class="header-warp" px-2>
-      <div class="logo">
+      <div class="logo w-20">
         <img src="../../public/logo_b@2x.png" alt="logo">
       </div>
-      <ul class="navigation">
+      <ul
+        class="navigation"
+        flex
+        text-xl
+      >
         <li v-for="(nav, index) in navList" :key="index">
           {{ nav.name }}
         </li>

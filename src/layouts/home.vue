@@ -1,10 +1,7 @@
 <template>
   <!-- <main class="px-4 py-10 text-gray-700 dark:text-gray-200"> -->
-  <main class="text-gray-700 dark:text-gray-200">
+  <main class="text-gray-700 dark:text-gray-200 w-100% h-100vh">
     <RouterView />
-    <Header />
-    <div class="mt-5 mx-auto text-center opacity-75 dark:opacity-50 text-sm">
-      [Home 1 Layout]
-    </div>
+    <!-- <Header /> -->
   </main>
 </template>

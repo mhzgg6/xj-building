@@ -1,4 +1,10 @@
-<script setup lang="ts">
+<script setup>
+// Import Swiper Vue.js components
+import { Thumbs } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+// Import Swiper styles
+import 'swiper/css'
+
 const user = useUserStore()
 const name = $ref(user.savedName)
 
@@ -8,13 +14,36 @@ const go = () => {
     router.push(`/hi/${encodeURIComponent(name)}`)
 }
 
+const onSwiper = (swiper) => {
+  console.log(swiper)
+}
+const onSlideChange = () => {
+  console.log('slide change')
+}
+const thumbsSwiper = ref(null)
+const setThumbsSwiper = (swiper) => {
+  thumbsSwiper.value = swiper
+}
+
 const { t } = useI18n()
 </script>
 
 <template>
-  <div>小杨杨</div>
-
-  <div>
+  <swiper
+    class="h-100%"
+    :slides-per-view="3"
+    :space-between="50"
+    :modules="[Thumbs]"
+    :thumbs="{ swiper: thumbsSwiper }"
+    @swiper="onSwiper"
+    @slideChange="onSlideChange"
+  >
+    <swiper-slide>Slide 1</swiper-slide>
+    <swiper-slide>Slide 2</swiper-slide>
+    <swiper-slide>Slide 3</swiper-slide>
+    ...
+  </swiper>
+  <!-- <div>
     <div text-4xl>
       <div i-carbon-campsite inline-block />
     </div>
@@ -55,7 +84,7 @@ const { t } = useI18n()
         {{ t('button.go') }}
       </button>
     </div>
-  </div>
+  </div> -->
 </template>
 
 <route lang="yaml">
