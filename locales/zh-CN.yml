@@ -12,3 +12,9 @@ intro:
   aka: 也叫
   whats-your-name: 输入你的名字
 not-found: 未找到页面
+nav:
+  office: 事务所
+  project: 项目
+  media: 媒体
+  recruit: 招聘
+  contact: 联系

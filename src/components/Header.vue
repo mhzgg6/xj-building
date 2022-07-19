@@ -3,15 +3,16 @@ const { t, availableLocales, locale } = useI18n()
 
 const toggleLocales = () => {
   const locales = availableLocales
+  console.log(locale.value)
   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
 }
 
 const navList = reactive([
-  { name: '事务所', path: '/firm' },
-  { name: '项目', path: '/project' },
-  { name: '媒体', path: '/media' },
-  { name: '招聘', path: '/work' },
-  { name: '联系', path: '/contact' },
+  { name: t('nav.office'), path: '/firm' },
+  { name: t('nav.project'), path: '/project' },
+  { name: t('nav.media'), path: '/media' },
+  { name: t('nav.recruit'), path: '/work' },
+  { name: t('nav.contact'), path: '/contact' },
 ])
 
 const route = useRoute()
@@ -39,16 +40,13 @@ const go = (path: string) => router.push(path)
       </div>
 
       <div flex>
-        <router-link
-          v-for="nav in navList"
-          :key="nav.path"
-          :to="nav.path"
-          m-r-2
-          cursor-pointer
-          text-4
-        >
+        <router-link v-for="nav in navList" :key="nav.path" :to="nav.path" icon-btn m-r-2 cursor-pointer text-4>
           {{ nav.name }}
         </router-link>
+
+        <a class="icon-btn mx-2" :title="t('button.toggle_langs')" @click="toggleLocales()">
+          <div i-carbon-language />
+        </a>
       </div>
     </div>
   </nav>
