@@ -1,18 +1,9 @@
 <script setup>
-
+import { isIndex } from '~/composables/isIndex'
 </script>
 
 <template>
-  <div
-    relative
-    text-center
-    z-2
-    pt-150px
-    pb-100px
-    text-12px
-    bg-white
-    class="color-#aaa"
-  >
+  <div v-if="!isIndex" relative h-200px flex justify-center items-center z-10 text-12px bg-white class="color-#aaa/80">
     © Copyright 2008-2020 | Vector Architects | All Rights Reserved
     <span>
       <strong>Powered by </strong>
