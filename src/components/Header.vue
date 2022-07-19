@@ -5,7 +5,6 @@ const { t, availableLocales, locale } = useI18n()
  
 const toggleLocales = () => {
   const locales = availableLocales
-  console.log(locale.value)
   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
 }
 
