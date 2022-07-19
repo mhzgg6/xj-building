@@ -19,6 +19,10 @@ useHead({
     },
   ],
 })
+
+/** 语言初始化设置 */
+const html = document.querySelector('html')
+html?.setAttribute('lang', 'zh-CN')
 </script>
 
 <template>
