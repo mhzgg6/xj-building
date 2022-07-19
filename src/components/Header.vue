@@ -1,10 +1,13 @@
 <script setup lang="ts">
-const { t, availableLocales, locale } = useI18n()
+import { isIndex } from '~/composables/isIndex'
 
+const { t, availableLocales, locale } = useI18n()
+ 
 const toggleLocales = () => {
   const locales = availableLocales
-  console.log(locale.value)
   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
+  const html = document.querySelector('html')
+  html?.setAttribute('lang', locale.value)
 }
 
 const navList = reactive([
@@ -15,15 +18,10 @@ const navList = reactive([
   { name: 'nav.contact', path: '/contact' },
 ])
 
-const route = useRoute()
-
-// 判断是否是首页
-const isIndex = $computed(() => route.name === 'index')
-
 // 导航页面的动态class
 const navClass = computed(() =>
-  isIndex
-    ? 'bg-transparent text-gray'
+  isIndex.value
+    ? 'bg-transparent text-white/90'
     : 'bg-white text-black border-b-gray',
 )
 
@@ -40,7 +38,7 @@ const go = (path: string) => router.push(path)
       </div>
 
       <div flex>
-        <router-link v-for="nav in navList" :key="nav.path" :to="nav.path" icon-btn m-r-2 cursor-pointer text-4>
+        <router-link v-for="nav in navList" :key="nav.path" :to="nav.path" icon-btn m-r-2 cursor-pointer text-5>
           {{ t(nav.name) }}
         </router-link>
 
