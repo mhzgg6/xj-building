@@ -8,11 +8,11 @@ const toggleLocales = () => {
 }
 
 const navList = reactive([
-  { name: t('nav.office'), path: '/firm' },
-  { name: t('nav.project'), path: '/project' },
-  { name: t('nav.media'), path: '/media' },
-  { name: t('nav.recruit'), path: '/work' },
-  { name: t('nav.contact'), path: '/contact' },
+  { name: 'nav.office', path: '/firm' },
+  { name: 'nav.project', path: '/project' },
+  { name: 'nav.media', path: '/media' },
+  { name: 'nav.recruit', path: '/work' },
+  { name: 'nav.contact', path: '/contact' },
 ])
 
 const route = useRoute()
@@ -41,7 +41,7 @@ const go = (path: string) => router.push(path)
 
       <div flex>
         <router-link v-for="nav in navList" :key="nav.path" :to="nav.path" icon-btn m-r-2 cursor-pointer text-4>
-          {{ nav.name }}
+          {{ t(nav.name) }}
         </router-link>
 
         <a class="icon-btn mx-2" :title="t('button.toggle_langs')" @click="toggleLocales()">
