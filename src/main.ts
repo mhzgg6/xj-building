@@ -6,7 +6,6 @@ import generatedRoutes from '~pages'
 
 import '@unocss/reset/tailwind.css'
 import './styles/main.css'
-import './styles/header.css'
 import './styles/firm.css'
 import 'uno.css'
 
