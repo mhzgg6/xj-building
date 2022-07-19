@@ -36,15 +36,15 @@ const onSlideChange = () => {
     top-60px
     left-0
   >
+      <!-- :autoplay="{
+        delay: 2500,
+        disableOnInteraction: false, //  触碰后不会停止自动切换
+      }" -->
     <swiper
       class="swiper-container h-100%"
       :slides-per-view="1"
       :loop="true"
       :centered-slides="true"
-      :autoplay="{
-        delay: 2500,
-        disableOnInteraction: false, //  触碰后不会停止自动切换
-      }"
       :navigation="true"
       :modules="modules"
     >
