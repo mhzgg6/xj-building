@@ -25,25 +25,30 @@ const navClass = computed(() =>
     ? 'bg-transparent text-gray'
     : 'bg-white text-black border-b-gray',
 )
+
+const router = useRouter()
+
+const go = (path: string) => router.push(path)
 </script>
 
 <template>
   <nav sticky z-10 left-0 top-0 p-5 text-xl class="w-100%" :class="navClass">
     <div flex justify-between px-2>
-      <div class="logo w-20">
+      <div class="logo w-20" @click="go('/')">
         <img src="../../public/logo_b@2x.png" alt="logo">
       </div>
 
       <div flex>
-        <div
+        <router-link
           v-for="nav in navList"
           :key="nav.path"
+          :to="nav.path"
           m-r-2
           cursor-pointer
           text-4
         >
           {{ nav.name }}
-        </div>
+        </router-link>
       </div>
     </div>
   </nav>
