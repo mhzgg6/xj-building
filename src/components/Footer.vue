@@ -15,7 +15,7 @@
   >
     © Copyright 2008-2020 | Vector Architects | All Rights Reserved
     <span>
-      <strong>Powered by </strong>
+      Powered by
       <a href="">mhz</a>
       <a href="">京ICP备18000933号</a>
     </span>
