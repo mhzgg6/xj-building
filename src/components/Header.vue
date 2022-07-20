@@ -2,7 +2,7 @@
 import { isIndex } from '~/composables/isIndex'
 
 const { t, availableLocales, locale } = useI18n()
- 
+
 const toggleLocales = () => {
   const locales = availableLocales
   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
@@ -31,7 +31,7 @@ const go = (path: string) => router.push(path)
 </script>
 
 <template>
-  <nav sticky z-10 left-0 top-0 p-5 text-xl class="w-100%" :class="navClass">
+  <nav fixed z-10 left-0 top-0 p-5 text-xl class="w-100%" :class="navClass">
     <div flex justify-between px-2>
       <div class="logo w-20" @click="go('/')">
         <img src="../../public/logo_b@2x.png" alt="logo">

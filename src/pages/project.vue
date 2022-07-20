@@ -33,13 +33,13 @@ const times = ref([2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2
     pr-20px
     text-14px
   >
-    <!-- <a 
+    <!-- <a
       class="color-#aaa"
       inline-block
       ml-12px
       mr-12px
       v-top
-      v-for="time in times" 
+      v-for="time in times"
       :key="time"
     >
       {{ time }}

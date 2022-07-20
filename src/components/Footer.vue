@@ -3,7 +3,7 @@ import { isIndex } from '~/composables/isIndex'
 </script>
 
 <template>
-  <div v-if="!isIndex" relative h-200px flex justify-center items-center z-10 text-12px bg-white class="color-#aaa/80">
+  <div v-if="!isIndex" sticky h-100px flex justify-center items-center z-10 text-12px bg-white class="color-#aaa/80" style="top: calc(100vh - 100px)">
     © Copyright 2008-2020 | Vector Architects | All Rights Reserved
     <span>
       Powered by
