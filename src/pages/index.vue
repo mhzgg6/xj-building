@@ -4,8 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 // Import Swiper styles
 import "swiper/css";
 // import required modules
-import { Autoplay } from "swiper";
-const modules = [Autoplay]
+import { Autoplay, Thumbs, Navigation } from "swiper";
+const modules = [Autoplay, Thumbs, Navigation]
 
 const getAssetsImages = (name, type) => {
   return new URL(`/src/imgs/${name}.${type}`, import.meta.url).href
@@ -15,22 +15,26 @@ const imgs = [
   getAssetsImages('xj', 'png'),
 ]
 
+let thumbsSwiper = $ref()
+
+const setThumbsSwiper = (swiper) => {
+  thumbsSwiper = swiper;
+}
 </script>
 
 <template>
   <div h-100vh w-100vw left-0 top-0 absolute>
     <swiper class="swiper-container h-100%" :slides-per-view="1" :loop="true" :centered-slides="false"
-      :autoplay="{ delay: 3000, disableOnInteraction: false }" :modules="modules">
+      :autoplay="{ delay: 3000, disableOnInteraction: false }" :modules="modules" :thumbs="{ swiper: thumbsSwiper }">
       <swiper-slide v-for="(item, i) in imgs" :key="i" class="swiper-slide">
-        <img class="w-100% h-100%" :src="item" alt="">
+        <img :src="item" alt="">
       </swiper-slide>
-      <!-- 如果需要分页器 -->
-      <div class="swiper-pagination" />
-      <!-- 如果需要导航按钮 左右箭头。如果放置在swiper-container外面，需要自定义样式。 -->
-      <!-- <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div> -->
-      <!-- 如果需要滚动条 -->
-      <!-- <div class="swiper-scrollbar"></div> -->
+    </swiper>
+
+    <swiper :navigation="true" :slides-per-view="imgs.length" :loop="true" :centered-slides="true" :space-between="20" :watch-slides-progress="true" :modules="modules" @swiper="setThumbsSwiper" class="thumb"> 
+      <swiper-slide  v-for="(item, i) in imgs" :key="i" class="swiper-slide">
+        <img :src="item" alt="">
+      </swiper-slide>
     </swiper>
   </div>
 </template>
@@ -42,8 +46,37 @@ meta:
 
 
 <style scoped>
-.swiper-button-next,
-.swiper-button-prev {
-  display: none;
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+
+.thumb {
+  height: 20%;
+  width: 80%;
+  box-sizing: border-box;
+  padding: 10px 0;
+  position: relative;
+  top: -200px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.thumb .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.thumb .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>
+
