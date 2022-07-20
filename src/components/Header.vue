@@ -22,7 +22,7 @@ const navList = reactive([
 const navClass = computed(() =>
   isIndex.value
     ? 'bg-transparent text-white/90'
-    : 'bg-white text-black border-b-gray',
+    : 'bg-white text-black border-b-gray/30 border-b-1',
 )
 
 const router = useRouter()
