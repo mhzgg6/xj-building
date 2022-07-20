@@ -14,7 +14,7 @@ const navList = reactive([
   { name: 'nav.office', path: '/firm' },
   { name: 'nav.project', path: '/project' },
   { name: 'nav.media', path: '/media' },
-  { name: 'nav.recruit', path: '/work' },
+  { name: 'nav.job', path: '/work' },
   { name: 'nav.contact', path: '/contact' },
 ])
 
@@ -38,7 +38,7 @@ const go = (path: string) => router.push(path)
       </div>
 
       <div flex>
-        <router-link v-for="nav in navList" :key="nav.path" :to="nav.path" icon-btn m-r-2 cursor-pointer text-5>
+        <router-link v-for="nav in navList" :key="nav.path" :to="nav.path" icon-btn mr-8 cursor-pointer text-5>
           {{ t(nav.name) }}
         </router-link>
 
