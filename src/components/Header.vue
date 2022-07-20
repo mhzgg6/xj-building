@@ -2,7 +2,7 @@
 import { isIndex } from '~/composables/isIndex'
 
 const { t, availableLocales, locale } = useI18n()
- 
+
 const toggleLocales = () => {
   const locales = availableLocales
   locale.value = locales[(locales.indexOf(locale.value) + 1) % locales.length]
@@ -14,7 +14,7 @@ const navList = reactive([
   { name: 'nav.office', path: '/firm' },
   { name: 'nav.project', path: '/project' },
   { name: 'nav.media', path: '/media' },
-  { name: 'nav.recruit', path: '/work' },
+  { name: 'nav.job', path: '/work' },
   { name: 'nav.contact', path: '/contact' },
 ])
 
@@ -31,14 +31,14 @@ const go = (path: string) => router.push(path)
 </script>
 
 <template>
-  <nav sticky z-10 left-0 top-0 p-5 text-xl class="w-100%" :class="navClass">
+  <nav fixed z-10 left-0 top-0 p-5 text-xl class="w-100%" :class="navClass">
     <div flex justify-between px-2>
       <div class="logo w-20" @click="go('/')">
         <img src="../../public/logo_b@2x.png" alt="logo">
       </div>
 
       <div flex>
-        <router-link v-for="nav in navList" :key="nav.path" :to="nav.path" icon-btn m-r-2 cursor-pointer text-5>
+        <router-link v-for="nav in navList" :key="nav.path" :to="nav.path" icon-btn mr-8 cursor-pointer text-5>
           {{ t(nav.name) }}
         </router-link>
 
