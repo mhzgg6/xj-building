@@ -62,7 +62,6 @@ meta:
   width: 80%;
   box-sizing: border-box;
   padding: 10px 0;
-  padding-top: 10vh;
   position: relative;
   top: -25vh;
   background: rgba(0, 0, 0, 0.2);
