@@ -10,7 +10,7 @@ body,
 }
 
 html:lang(en) body #app{
-  font-family: "SF Pro SC","SF Pro Text","SF Pro Icons","PingFang SC", "Verdana, Arial", '微软雅黑','宋体'
+ // TODO
 }
 
 html.dark {
