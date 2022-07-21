@@ -1,10 +1,11 @@
 <script setup>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
-// Import Swiper styles
-import "swiper/css";
 // import required modules
 import { Autoplay, Thumbs, Navigation } from "swiper";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
 const modules = [Autoplay, Thumbs, Navigation]
 
 const getAssetsImages = (name, type) => {
@@ -13,6 +14,8 @@ const getAssetsImages = (name, type) => {
 const imgs = [
   getAssetsImages('blue', 'jpg'),
   getAssetsImages('xj', 'png'),
+  getAssetsImages('funk', 'png'),
+  getAssetsImages('diner', 'jpg'),
 ]
 
 let thumbsSwiper = $ref()
@@ -31,8 +34,10 @@ const setThumbsSwiper = (swiper) => {
       </swiper-slide>
     </swiper>
 
-    <swiper :navigation="true" :slides-per-view="imgs.length" :loop="true" :centered-slides="true" :space-between="20" :watch-slides-progress="true" :modules="modules" @swiper="setThumbsSwiper" class="thumb"> 
-      <swiper-slide  v-for="(item, i) in imgs" :key="i" class="swiper-slide">
+    <swiper :navigation="true" :slides-per-view="imgs.length" :loop="true" :space-between="20"
+      :watch-slides-progress="true" :modules="modules" @swiper="setThumbsSwiper" class="thumb" op-0 hover:op-100 cursor-pointer
+      delay-200>
+      <swiper-slide v-for="(item, i) in imgs" :key="i" class="swiper-slide">
         <img :src="item" alt="">
       </swiper-slide>
     </swiper>
@@ -53,12 +58,13 @@ meta:
 
 
 .thumb {
-  height: 20%;
+  height: 20vh;
   width: 80%;
   box-sizing: border-box;
   padding: 10px 0;
+  padding-top: 10vh;
   position: relative;
-  top: -200px;
+  top: -25vh;
   background: rgba(0, 0, 0, 0.2);
 }
 
