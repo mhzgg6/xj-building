@@ -14,7 +14,7 @@ const navList = reactive([
   { name: 'nav.office', path: '/firm' },
   { name: 'nav.project', path: '/project' },
   { name: 'nav.media', path: '/media' },
-  { name: 'nav.job', path: '/work' },
+  { name: 'nav.job', path: '/job' },
   { name: 'nav.contact', path: '/contact' },
 ])
 
@@ -22,7 +22,7 @@ const navList = reactive([
 const navClass = computed(() =>
   isIndex.value
     ? 'bg-transparent text-white/90'
-    : 'bg-white text-black border-b-gray/30 border-b-1',
+    : 'bg-white text-black border-b-gray',
 )
 
 const router = useRouter()
@@ -32,13 +32,13 @@ const go = (path: string) => router.push(path)
 
 <template>
   <nav fixed z-10 left-0 top-0 p-5 text-xl class="w-100%" :class="navClass">
-    <div flex justify-between px-2>
+    <div flex justify-between px-2 w-1180px m-auto>
       <div class="logo w-20" @click="go('/')">
         <img src="../../public/logo_b@2x.png" alt="logo">
       </div>
 
       <div flex>
-        <router-link v-for="nav in navList" :key="nav.path" :to="nav.path" icon-btn mr-8 cursor-pointer text-5>
+        <router-link v-for="nav in navList" :key="nav.path" :to="nav.path" icon-btn m-r-2 cursor-pointer text-5>
           {{ t(nav.name) }}
         </router-link>
 
