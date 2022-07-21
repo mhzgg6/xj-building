@@ -1,12 +1,14 @@
 <script setup>
+// import { data } from "../../api/project.js"
 const { t } = useI18n()
+const router = useRouter()
 const getAssetsImages = (name, type) => {
   return new URL(`/src/imgs/${name}.${type}`, import.meta.url).href
 }
-// const imgs = [
-//   getAssetsImages('blue', 'jpg'),
-//   getAssetsImages('xj', 'png'),
-// ]
+const imgs = [
+  getAssetsImages('blue', 'jpg'),
+  getAssetsImages('xj', 'png'),
+]
 const times = reactive([2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, '按时间'])
 let sourceData = $ref([
   {
@@ -39,10 +41,18 @@ let projects = $ref([])
 projects = [...sourceData]
 
 const toggleTime = (time) => {
-  let res = sourceData.filter(item => {
-    return item.time === time
-  })
-  projects = [...res]
+  if (time != '按时间') {
+    let res = sourceData.filter(item => {
+      return item.time === time
+    })
+    projects = [...res]
+  } else {
+    projects = [...sourceData]
+  }
+}
+const link = (item) => {
+  let path = '/project/' + 1
+  router.push(path)
 }
 </script>
 
@@ -52,6 +62,7 @@ const toggleTime = (time) => {
     justify-end
     max-w-1220px
     ma-a
+    mt-69px
     p-20px
     text-14px
   >
@@ -81,6 +92,7 @@ const toggleTime = (time) => {
       <li
         v-for="(item, index) in projects"
         :key="index"
+        @click="link(item)"
       > 
         <div class="item-img" :style="{ 'backgroundImage': `url(${item.img})` }">
 
