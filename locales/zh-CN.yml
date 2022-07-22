@@ -13,10 +13,10 @@ intro:
   whats-your-name: 输入你的名字
 not-found: 未找到页面
 nav:
-  office: 事务所
+  office: 我们
   project: 项目
   media: 媒体
-  job: 招聘
+  job: 研究
   contact: 联系
 
 # 事务所
