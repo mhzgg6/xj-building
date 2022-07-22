@@ -8,11 +8,22 @@ import "swiper/css";
 // import required modules
 import { Autoplay } from "swiper";
 const modules = [Autoplay]
+
+const getAssetsImages = (name, type) => {
+  return new URL(`/src/imgs/${name}.${type}`, import.meta.url).href
+}
+const imgs = [
+  getAssetsImages('blue', 'jpg'),
+  getAssetsImages('xj', 'png'),
+  getAssetsImages('funk', 'png'),
+  getAssetsImages('diner', 'jpg'),
+]
 </script>
 
 
 <template>
-  <swiper :modules="modules" :loop="true" :slides-per-view="1" :autoplay="{ delay: 1000, disableOnInteraction: false }" class="mySwiper">
+  <swiper :modules="modules" :loop="true" :slides-per-view="1" :autoplay="{ delay: 1000, disableOnInteraction: false }"
+    class="mySwiper">
     <swiper-slide>Slide sdsdddddddddddd1</swiper-slide>
     <swiper-slide>Slide 2</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
@@ -23,6 +34,9 @@ const modules = [Autoplay]
     <swiper-slide>Slide 8</swiper-slide>
     <swiper-slide>Slide 9</swiper-slide>
   </swiper>
+  <viewer :images="imgs">
+    <img v-for="src in imgs" :key="src" :src="src">
+  </viewer>
 </template>
 
 <style scoped>
@@ -57,7 +71,6 @@ const modules = [Autoplay]
 .swiper-button-prev {
   display: none;
 }
-
 </style>
 <route lang="yaml">
 meta:

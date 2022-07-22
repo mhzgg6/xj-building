@@ -8,6 +8,7 @@ import '@unocss/reset/tailwind.css'
 import './styles/main.css'
 import './styles/firm.css'
 import 'uno.css'
+import 'viewerjs/dist/viewer.css'
 
 const routes = setupLayouts(generatedRoutes)
 
