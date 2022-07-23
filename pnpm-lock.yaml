@@ -39,6 +39,7 @@ specifiers:
   vitest: ^0.18.0
   vue: ^3.2.37
   vue-demi: ^0.13.4
+  vue-flex-waterfall: ^2.1.0
   vue-i18n: ^9.1.10
   vue-router: ^4.1.2
   vue-tsc: ^0.38.5
@@ -53,6 +54,7 @@ dependencies:
   v-viewer: 3.0.10_vue@3.2.37
   vue: 3.2.37
   vue-demi: 0.13.4_vue@3.2.37
+  vue-flex-waterfall: 2.1.0
   vue-i18n: 9.1.10_vue@3.2.37
   vue-router: 4.1.2_vue@3.2.37
 
@@ -3643,7 +3645,7 @@ packages:
     dev: true
 
   /escape-html/1.0.3:
-    resolution: {integrity: sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=}
+    resolution: {integrity: sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow==}
     dev: true
 
   /escape-string-regexp/1.0.5:
@@ -7467,6 +7469,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /vue-flex-waterfall/2.1.0:
+    resolution: {integrity: sha512-bXw9eLciXlygyVeF0NDW5ihmmOgKzMoj/+nYtSQfJ/oJQ/J/9JOGjMI/wT8cJ/21cx6o6m8q7rQUz/8GKgerLg==}
+    dev: false
 
   /vue-i18n/9.1.10_vue@3.2.37:
     resolution: {integrity: sha512-jpr7gV5KPk4n+sSPdpZT8Qx3XzTcNDWffRlHV/cT2NUyEf+sEgTTmLvnBAibjOFJ0zsUyZlVTAWH5DDnYep+1g==}
