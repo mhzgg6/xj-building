@@ -14,8 +14,8 @@ const getAssetsImages = (name, type) => {
   return new URL(`/src/imgs/${name}.${type}`, import.meta.url).href
 }
 const imgs = [
-  getAssetsImages('blue', 'jpg'),
   getAssetsImages('xj', 'png'),
+  getAssetsImages('blue', 'jpg'),
 ]
 
 console.log(imgs)
@@ -70,7 +70,7 @@ const onSlideChange = () => {
   >
     <div class="main-content-panel">
       <div class="panel-left">
-        <h2>象界</h2>
+        <h2 text-18px>象界</h2>
         <p>
           直向建筑事务所于2008年在北京成立。
         </p>

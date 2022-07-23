@@ -13,6 +13,7 @@ const times = reactive([2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 20
 let sourceData = $ref([
   {
     time: 2020,
+    type: '',
     name: '像个利拉',
     img: getAssetsImages('blue', 'jpg'),
   },
@@ -107,23 +108,26 @@ const link = (item) => {
 </template>
 
 <style scoped>
-.project{
-  border: 1px solid red;
-}
+/* .project{
+-} */
 .project ul{
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: space-between;
+  min-height: 200px;
 }
 .project ul li{
   position: relative;
-  width: calc(25% - 10px);
+  width: calc(25% - 15px);
   height: 200px;
   cursor: pointer;
   margin-bottom: 10px;
+  margin-right: 20px;
   color: #fff;
   overflow: hidden;
+}
+.project ul li:nth-child(4n){
+  margin-right: 0;
 }
 .project ul li:hover .item-img{
   transform: scale(1.05);
