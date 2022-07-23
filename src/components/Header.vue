@@ -24,17 +24,12 @@ const navClass = computed(() =>
     ? 'bg-transparent text-white/90'
     : 'bg-white text-black border-b-gray',
 )
-
-const router = useRouter()
-
-const go = (path: string) => router.push(path)
 </script>
 
 <template>
   <nav fixed z-10 left-0 top-0 p-5 flex class="w-100%" :class="navClass">
     <div flex justify-between px-2 w-1180px  m-auto  md:shrink>
       <router-link to="/" cursor-pointer>
-        <!-- <img src="../../public/index-logo2.png" alt="logo"> -->
         <img h-16 :src="isIndex ? '/logo-light.png': '/logo.png'" />
       </router-link>
 
