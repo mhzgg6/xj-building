@@ -31,14 +31,15 @@ const go = (path: string) => router.push(path)
 </script>
 
 <template>
-  <nav fixed z-10 left-0 top-0 p-5 text-xl flex class="w-100%" :class="navClass">
+  <nav fixed z-10 left-0 top-0 p-5 flex class="w-100%" :class="navClass">
     <div flex justify-between px-2 w-1180px  m-auto  md:shrink>
-      <div class="logo w-20" @click="go('/')">
-        <img src="../../public/logo_b@2x.png" alt="logo">
-      </div>
+      <router-link to="/" cursor-pointer>
+        <!-- <img src="../../public/index-logo2.png" alt="logo"> -->
+        <img h-16 :src="isIndex ? '/logo-light.png': '/logo.png'" />
+      </router-link>
 
-      <div flex>
-        <router-link v-for="nav in navList" :key="nav.path" :to="nav.path" icon-btn w-24 text-center cursor-pointer text-5>
+      <div flex items-center>
+        <router-link v-for="nav in navList" :key="nav.path" :to="nav.path" icon-btn w-24 text-center cursor-pointer text-4>
           {{ t(nav.name) }}
         </router-link>
 

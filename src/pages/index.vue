@@ -34,7 +34,7 @@ const setThumbsSwiper = (swiper) => {
       </swiper-slide>
     </swiper>
 
-    <div class="thumb" z-10  hover:op-100 cursor-pointer delay-200>
+    <div class="thumb" z-10 op-0 hover:op-100 cursor-pointer delay-200>
       <swiper :navigation="true" :slides-per-view="imgs.length" :loop="true" :space-between="20"
         :watch-slides-progress="true" :modules="modules" @swiper="setThumbsSwiper" class="gallery">
         <swiper-slide v-for="(item, i) in imgs" :key="i" class="swiper-slide">
@@ -74,14 +74,14 @@ meta:
 .gallery {
   height: 25vh;
   width: 80vw;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.5);
   padding: 20px;
   backdrop-filter: blur(10px);
 }
 
 .thumb :deep(.swiper-slide) {
   height: 100%;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 .thumb :deep(.swiper-slide-visible.swiper-slide-thumb-active) {
