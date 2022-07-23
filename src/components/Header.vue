@@ -38,7 +38,7 @@ const go = (path: string) => router.push(path)
       </div>
 
       <div flex>
-        <router-link v-for="nav in navList" :key="nav.path" :to="nav.path" icon-btn m-r-2 cursor-pointer text-5>
+        <router-link v-for="nav in navList" :key="nav.path" :to="nav.path" icon-btn w-24 text-center cursor-pointer text-5>
           {{ t(nav.name) }}
         </router-link>
 
