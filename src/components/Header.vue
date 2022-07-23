@@ -21,24 +21,25 @@ const navList = reactive([
 // 导航页面的动态class
 const navClass = computed(() =>
   isIndex.value
+<<<<<<< HEAD
     ? 'bg-transparent text-white'
     : 'bg-white text-black border-b-gray',
+=======
+    ? 'bg-transparent text-white/90'
+    : 'bg-white text-black  border-b-1 border-b-gray/30',
+>>>>>>> a90652a2721cf386d88ed0c19668a319cac9e74e
 )
-
-const router = useRouter()
-
-const go = (path: string) => router.push(path)
 </script>
 
 <template>
-  <nav fixed z-10 left-0 top-0 p-5 text-xl flex class="w-100%" :class="navClass">
+  <nav h-26 fixed z-10 left-0 top-0 p-5 flex class="w-100%" :class="navClass">
     <div flex justify-between px-2 w-1180px  m-auto  md:shrink>
-      <div class="logo w-20" @click="go('/')">
-        <img src="../../public/logo_b@2x.png" alt="logo">
-      </div>
+      <router-link to="/" cursor-pointer>
+        <img class="h-16" :src="isIndex ? '/logo-light.png': '/logo.png'" />
+      </router-link>
 
-      <div flex>
-        <router-link v-for="nav in navList" :key="nav.path" :to="nav.path" icon-btn w-24 text-center cursor-pointer text-5>
+      <div flex items-center>
+        <router-link v-for="nav in navList" :key="nav.path" :to="nav.path" icon-btn w-24 text-center cursor-pointer text-4>
           {{ t(nav.name) }}
         </router-link>
 
