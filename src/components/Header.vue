@@ -32,7 +32,7 @@ const go = (path: string) => router.push(path)
 
 <template>
   <nav fixed z-10 left-0 top-0 p-5 text-xl flex class="w-100%" :class="navClass">
-    <div flex justify-between px-2 w-1180px md:flex-1 m-auto>
+    <div flex justify-between px-2 w-1180px  m-auto  md:shrink>
       <div class="logo w-20" @click="go('/')">
         <img src="../../public/logo_b@2x.png" alt="logo">
       </div>

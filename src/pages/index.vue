@@ -81,7 +81,7 @@ meta:
 
 .thumb :deep(.swiper-slide) {
   height: 100%;
-  opacity: 0.4;
+  opacity: 0.6;
 }
 
 .thumb :deep(.swiper-slide-visible.swiper-slide-thumb-active) {
