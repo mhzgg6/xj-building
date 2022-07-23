@@ -34,13 +34,14 @@ const setThumbsSwiper = (swiper) => {
       </swiper-slide>
     </swiper>
 
-    <swiper :navigation="true" :slides-per-view="imgs.length" :loop="true" :space-between="20"
-      :watch-slides-progress="true" :modules="modules" @swiper="setThumbsSwiper" class="thumb" op-0 hover:op-100 cursor-pointer
-      delay-200>
-      <swiper-slide v-for="(item, i) in imgs" :key="i" class="swiper-slide">
-        <img :src="item" alt="">
-      </swiper-slide>
-    </swiper>
+    <div class="thumb" z-10  hover:op-100 cursor-pointer delay-200>
+      <swiper :navigation="true" :slides-per-view="imgs.length" :loop="true" :space-between="20"
+        :watch-slides-progress="true" :modules="modules" @swiper="setThumbsSwiper" class="gallery">
+        <swiper-slide v-for="(item, i) in imgs" :key="i" class="swiper-slide">
+          <img :src="item" alt="">
+        </swiper-slide>
+      </swiper>
+    </div>
   </div>
 </template>
 
@@ -58,22 +59,32 @@ meta:
 
 
 .thumb {
-  height: 20vh;
-  width: 80%;
+  height: 50vh;
+  width: 100vw;
   box-sizing: border-box;
   padding: 10px 0;
   position: relative;
-  top: -25vh;
-  background: rgba(0, 0, 0, 0.2);
+  top: -55vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 25vh;
+  --swiper-theme-color: rgba(255,255,255, 0.8);
 }
 
-.thumb .swiper-slide {
-  width: 25%;
+.gallery {
+  height: 25vh;
+  width: 80vw;
+  background: transparent;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.thumb :deep(.swiper-slide) {
   height: 100%;
   opacity: 0.4;
 }
 
-.thumb .swiper-slide-thumb-active {
+.thumb :deep(.swiper-slide-visible.swiper-slide-thumb-active) {
   opacity: 1;
 }
 
