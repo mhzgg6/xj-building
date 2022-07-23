@@ -8,8 +8,6 @@ import { A11y, Autoplay, Navigation, Pagination } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import Viewer from 'v-viewer'
-import 'viewerjs/dist/viewer.css'
 const { t } = useI18n()
 console.log(Viewer)
 const getAssetsImages = (name, type) => {

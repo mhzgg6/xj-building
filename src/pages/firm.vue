@@ -90,7 +90,7 @@ const onSlideChange = () => {
     </div>
     <div class="main-content-panel">
       <div class="panel-left">
-        <h2>象界</h2>
+        <h2 text-18px class="font-weight">象界</h2>
         <p>
           直向建筑事务所于2008年在北京成立。
         </p>
