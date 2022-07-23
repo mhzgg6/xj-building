@@ -22,3 +22,11 @@ nav:
 # 事务所
 firm:
   title: xj
+
+# 媒体
+media:
+  publication : 出版物
+  exhibition : 展览
+  award : 获奖
+  lecture : 讲座
+  all : 按类别
