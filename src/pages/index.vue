@@ -26,7 +26,7 @@ const setThumbsSwiper = (swiper) => {
 </script>
 
 <template>
-  <div h-100vh w-100vw left-0 top-0 absolute>
+  <div h-100vh w-100vw left-0 top--26 absolute>
     <swiper class="swiper-container h-100%" :slides-per-view="1" :loop="true" :centered-slides="false"
       :autoplay="{ delay: 3000, disableOnInteraction: false }" :modules="modules" :thumbs="{ swiper: thumbsSwiper }">
       <swiper-slide v-for="(item, i) in imgs" :key="i" class="swiper-slide">

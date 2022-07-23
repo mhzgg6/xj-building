@@ -22,15 +22,15 @@ const navList = reactive([
 const navClass = computed(() =>
   isIndex.value
     ? 'bg-transparent text-white/90'
-    : 'bg-white text-black border-b-gray',
+    : 'bg-white text-black  border-b-1 border-b-gray/30',
 )
 </script>
 
 <template>
-  <nav fixed z-10 left-0 top-0 p-5 flex class="w-100%" :class="navClass">
+  <nav h-26 fixed z-10 left-0 top-0 p-5 flex class="w-100%" :class="navClass">
     <div flex justify-between px-2 w-1180px  m-auto  md:shrink>
       <router-link to="/" cursor-pointer>
-        <img h-16 :src="isIndex ? '/logo-light.png': '/logo.png'" />
+        <img class="h-16" :src="isIndex ? '/logo-light.png': '/logo.png'" />
       </router-link>
 
       <div flex items-center>
