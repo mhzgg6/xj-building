@@ -1,20 +1,16 @@
 <script setup lang='ts'>
-import { VueFlexWaterfall } from "vue-flex-waterfall"
-import { isLagerScreen, isMiddleScreen, isSmallScreen } from "~/composables/meida";
 import list from './test'
 
 const filterItems = ['publication', 'exhibition', 'award', 'lecture', 'all']
   .map(key => ({ label: `media.${key}`, value: key }))
 
-const breakAt = { 1000: 3, 600: 2, 300: 1 }
+// const log = useDebounceFn(() => {
+//   console.log('lg:', unref(isLagerScreen))
+//   console.log('md:', unref(isMiddleScreen))
+//   console.log('sm:', unref(isSmallScreen))
+// }, 200)
 
-const log = useDebounceFn(() => {
-  console.log('lg:', unref(isLagerScreen))
-  console.log('md:', unref(isMiddleScreen))
-  console.log('sm:', unref(isSmallScreen))
-}, 200)
-
-window.onresize = () => log()
+// window.onresize = () => log()
 
 </script>
 
@@ -24,12 +20,45 @@ window.onresize = () => log()
     <section flex justify-end>
       <filter-nav :items="filterItems" />
     </section>
-
-    <vue-flex-waterfall break-by-container col="4" col-spacing="5" :break-at="breakAt" align-content="space-between">
-      <div w-240px p-2 v-for="item in list" :key="item.src">
-        {{ item.title }}
+    <!-- <section flex gap-2>
+      <div grow flex flex-col gap-2>
+        <div bg-red h-13>hh</div>
+        <div bg-red h-10>hh</div>
+        <div bg-red h-16>hh</div>
+        <div bg-red h-11>hh</div>
+        <div bg-red h-10>hh</div>
       </div>
-    </vue-flex-waterfall>
+      <div grow gap-2 flex-col flex>
+        <div bg-red h-12>hh</div>
+        <div bg-red h-13>hh</div>
+        <div bg-red h-10>hh</div>
+        <div bg-red h-15>hh</div>
+        <div bg-red h-10>hh</div>
+      </div>
+      <div grow gap-2 flex-col flex>
+        <div bg-red h-20>hh</div>
+        <div bg-red h-10>hh</div>
+        <div bg-red h-17>hh</div>
+        <div bg-red h-10>hh</div>
+        <div bg-red h-10>hh</div>
+      </div>
+      <div grow gap-2 flex-col flex>
+        <div bg-red h-19>hh</div>
+        <div bg-red h-23>hh</div>
+        <div bg-red h-10>hh</div>
+        <div bg-red h-12>hh</div>
+        <div bg-red h-11>hh</div>
+      </div>
+    </section> -->
+
+    <water-fall :data-list="list">
+      <template v-slot="scope">
+        <div p-2>
+          {{ scope.data.data.title }}
+        </div>
+      </template>
+    </water-fall>
+
   </div>
 </template>
 

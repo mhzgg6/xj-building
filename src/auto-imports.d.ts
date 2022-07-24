@@ -41,10 +41,13 @@ declare global {
   const isDark: typeof import('./composables/dark')['isDark']
   const isDefined: typeof import('@vueuse/core')['isDefined']
   const isIndex: typeof import('./composables/isIndex')['isIndex']
+  const isLagerScreen: typeof import('./composables/media')['isLagerScreen']
+  const isMiddleScreen: typeof import('./composables/media')['isMiddleScreen']
   const isProxy: typeof import('vue')['isProxy']
   const isReactive: typeof import('vue')['isReactive']
   const isReadonly: typeof import('vue')['isReadonly']
   const isRef: typeof import('vue')['isRef']
+  const isSmallScreen: typeof import('./composables/media')['isSmallScreen']
   const logicAnd: typeof import('@vueuse/core')['logicAnd']
   const logicNot: typeof import('@vueuse/core')['logicNot']
   const logicOr: typeof import('@vueuse/core')['logicOr']
@@ -306,10 +309,13 @@ declare module '@vue/runtime-core' {
     readonly isDark: UnwrapRef<typeof import('./composables/dark')['isDark']>
     readonly isDefined: UnwrapRef<typeof import('@vueuse/core')['isDefined']>
     readonly isIndex: UnwrapRef<typeof import('./composables/isIndex')['isIndex']>
+    readonly isLagerScreen: UnwrapRef<typeof import('./composables/media')['isLagerScreen']>
+    readonly isMiddleScreen: UnwrapRef<typeof import('./composables/media')['isMiddleScreen']>
     readonly isProxy: UnwrapRef<typeof import('vue')['isProxy']>
     readonly isReactive: UnwrapRef<typeof import('vue')['isReactive']>
     readonly isReadonly: UnwrapRef<typeof import('vue')['isReadonly']>
     readonly isRef: UnwrapRef<typeof import('vue')['isRef']>
+    readonly isSmallScreen: UnwrapRef<typeof import('./composables/media')['isSmallScreen']>
     readonly logicAnd: UnwrapRef<typeof import('@vueuse/core')['logicAnd']>
     readonly logicNot: UnwrapRef<typeof import('@vueuse/core')['logicNot']>
     readonly logicOr: UnwrapRef<typeof import('@vueuse/core')['logicOr']>
