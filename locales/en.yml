@@ -19,9 +19,12 @@ nav:
   job: Research
   contact: Contact
 
-# --事务所--
-firm:
-  title: xj
+# 项目
+project:
+  city: Urban Public Space
+  cultural : Cultural Vacation
+  courtyard: Courtyard
+  public: Public Device
 
 # 媒体
 media:

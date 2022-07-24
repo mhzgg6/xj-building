@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { isIndex } from '~/composables/isIndex'
+import { isBorder } from '~/composables/isBorder'
 
 const { t, availableLocales, locale } = useI18n()
 
@@ -23,6 +24,12 @@ const navClass = computed(() =>
   isIndex.value
     ? 'bg-transparent text-white'
     : 'bg-white text-black border-b-gray',
+)
+
+const navBorder = computed(() =>
+  isBorder.value
+    ? 'border border-#eee'
+    : '',
 )
 </script>
 

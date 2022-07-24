@@ -49,10 +49,6 @@ const onSlideChange = () => {
     top-0
     left-0
   >
-      <!-- :autoplay="{
-        delay: 2500,
-        disableOnInteraction: false, //  触碰后不会停止自动切换
-      }" -->
     <swiper
       class="swiper-container h-100%"
       :slides-per-view="1"

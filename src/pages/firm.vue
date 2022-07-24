@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 // Import Swiper styles
 import 'swiper/css'
 // 这是分页器和对应方法，swiper好像在6的时候就已经分离了分页器和一些其他工具
-import { A11y, Autoplay, Navigation, Pagination } from 'swiper'
+import { A11y, Navigation, Pagination } from 'swiper'
 // 引入swiper样式，对应css 如果使用less或者css只需要把scss改为对应的即可
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -18,8 +18,7 @@ const imgs = [
   getAssetsImages('blue', 'jpg'),
 ]
 
-console.log(imgs)
-const modules = [Autoplay, Pagination, Navigation, A11y]
+const modules = [Pagination, Navigation, A11y]
 const onSwiper = (swiper) => {
   console.log(swiper)
 }
@@ -36,10 +35,6 @@ const onSlideChange = () => {
     top-26
     left-0
   >
-      <!-- :autoplay="{
-        delay: 2500,
-        disableOnInteraction: false, //  触碰后不会停止自动切换
-      }" -->
     <swiper
       class="swiper-container h-100%"
       :slides-per-view="1"

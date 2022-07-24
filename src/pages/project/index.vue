@@ -5,66 +5,71 @@ const router = useRouter()
 const getAssetsImages = (name, type) => {
   return new URL(`/src/imgs/${name}.${type}`, import.meta.url).href
 }
-const imgs = [
-  getAssetsImages('blue', 'jpg'),
-  getAssetsImages('xj', 'png'),
-]
-const types = ['城市公共空间','文旅度假','庭院','公共装置']
-const times = reactive([2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, '按时间'])
+const types = ['project.city','project.cultural','project.courtyard','project.public']
 let sourceData = $ref([
   {
     time: 2020,
-    type: '',
+    type: '城市公共空间',
     name: '像个利拉',
     img: getAssetsImages('blue', 'jpg'),
   },
   {
     time: 2021,
+    type: '城市公共空间',
     name: '像个利拉',
     img: getAssetsImages('xj', 'png'),
   },
   {
     time: 2022,
+    type: '城市公共空间',
     name: '像个利拉',
     img: getAssetsImages('xj', 'png'),
   },
   {
     time: 2021,
+    type: '文旅度假',
     name: '像个利拉',
     img: getAssetsImages('xj', 'png'),
   },
   {
     time: 2022,
+    type: '文旅度假',
     name: '像个利拉',
     img: getAssetsImages('xj', 'png'),
   },
   {
     time: 2022,
+    type: '文旅度假',
     name: '像个利拉',
     img: getAssetsImages('xj', 'png'),
   },
   {
     time: 2022,
+    type: '庭院',
     name: '像个利拉',
     img: getAssetsImages('xj', 'png'),
   },
   {
     time: 2022,
+    type: '庭院',
     name: '像个利拉',
     img: getAssetsImages('xj', 'png'),
   },
   {
     time: 2022,
+    type: '庭院',
     name: '像个利拉',
     img: getAssetsImages('xj', 'png'),
   },
   {
     time: 2022,
+    type: '公共装置',
     name: '像个利拉',
     img: getAssetsImages('xj', 'png'),
   },
   {
     time: 2022,
+    type: '公共装置',
     name: '像个利拉',
     img: getAssetsImages('xj', 'png'),
   },
@@ -72,15 +77,12 @@ let sourceData = $ref([
 let projects = $ref([])
 projects = [...sourceData]
 
-const toggleTime = (time) => {
-  if (time != '按时间') {
-    let res = sourceData.filter(item => {
-      return item.time === time
-    })
-    projects = [...res]
-  } else {
-    projects = [...sourceData]
-  }
+const toggleType = (type) => {
+  let res = sourceData.filter(item => {
+    return item.type === type
+  })
+  projects = [...res]
+
 }
 const link = (item) => {
   let path = '/project/' + 1
@@ -95,24 +97,22 @@ const link = (item) => {
   >
     <div
         flex
-        justify-end
+        justify-around
         max-w-1220px
         ma-a
         p-20px
         text-14px
       >
         <a 
-          class="color-#aaa"
           inline-block
-          justify-unset
           ml-12px
           mr-12px
           cursor-pointer
           v-for="type in types" 
           :key="type"
-          @click="toggleTime(type)"
+          @click="toggleType(type)"
         >
-          {{ type }}
+          {{ t(type) }}
         </a>
     </div>
   </div>
