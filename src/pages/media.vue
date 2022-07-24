@@ -1,76 +1,68 @@
 <script setup lang='ts'>
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
+import list from './test'
 
-// Import Swiper styles
-import "swiper/css";
+const filterItems = ['publication', 'exhibition', 'award', 'lecture', 'all']
+  .map(key => ({ label: `media.${key}`, value: key }))
 
-// import required modules
-import { Autoplay } from "swiper";
-const modules = [Autoplay]
+// const log = useDebounceFn(() => {
+//   console.log('lg:', unref(isLagerScreen))
+//   console.log('md:', unref(isMiddleScreen))
+//   console.log('sm:', unref(isSmallScreen))
+// }, 200)
 
-const getAssetsImages = (name, type) => {
-  return new URL(`/src/imgs/${name}.${type}`, import.meta.url).href
-}
-const imgs = [
-  getAssetsImages('blue', 'jpg'),
-  getAssetsImages('xj', 'png'),
-  getAssetsImages('funk', 'png'),
-  getAssetsImages('diner', 'jpg'),
-]
+// window.onresize = () => log()
+
 </script>
 
 
 <template>
-  <swiper :modules="modules" :loop="true" :slides-per-view="1" :autoplay="{ delay: 1000, disableOnInteraction: false }"
-    class="mySwiper">
-    <swiper-slide>Slide sdsdddddddddddd1</swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 4</swiper-slide>
-    <swiper-slide>Slide 5</swiper-slide>
-    <swiper-slide>Slide 6</swiper-slide>
-    <swiper-slide>Slide 7</swiper-slide>
-    <swiper-slide>Slide 8</swiper-slide>
-    <swiper-slide>Slide 9</swiper-slide>
-  </swiper>
-  <viewer :images="imgs">
-    <img v-for="src in imgs" :key="src" :src="src">
-  </viewer>
+  <div p-5>
+    <section flex justify-end>
+      <filter-nav :items="filterItems" />
+    </section>
+    <!-- <section flex gap-2>
+      <div grow flex flex-col gap-2>
+        <div bg-red h-13>hh</div>
+        <div bg-red h-10>hh</div>
+        <div bg-red h-16>hh</div>
+        <div bg-red h-11>hh</div>
+        <div bg-red h-10>hh</div>
+      </div>
+      <div grow gap-2 flex-col flex>
+        <div bg-red h-12>hh</div>
+        <div bg-red h-13>hh</div>
+        <div bg-red h-10>hh</div>
+        <div bg-red h-15>hh</div>
+        <div bg-red h-10>hh</div>
+      </div>
+      <div grow gap-2 flex-col flex>
+        <div bg-red h-20>hh</div>
+        <div bg-red h-10>hh</div>
+        <div bg-red h-17>hh</div>
+        <div bg-red h-10>hh</div>
+        <div bg-red h-10>hh</div>
+      </div>
+      <div grow gap-2 flex-col flex>
+        <div bg-red h-19>hh</div>
+        <div bg-red h-23>hh</div>
+        <div bg-red h-10>hh</div>
+        <div bg-red h-12>hh</div>
+        <div bg-red h-11>hh</div>
+      </div>
+    </section> -->
+
+    <water-fall :data-list="list">
+      <template v-slot="scope">
+        <div p-2>
+          {{ scope.data.data.title }}
+        </div>
+      </template>
+    </water-fall>
+
+  </div>
 </template>
 
 <style scoped>
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  height: 400px;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.swiper-button-prev {
-  display: none;
-}
 </style>
 <route lang="yaml">
 meta:
