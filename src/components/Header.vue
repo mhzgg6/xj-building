@@ -21,13 +21,8 @@ const navList = reactive([
 // 导航页面的动态class
 const navClass = computed(() =>
   isIndex.value
-<<<<<<< HEAD
     ? 'bg-transparent text-white'
     : 'bg-white text-black border-b-gray',
-=======
-    ? 'bg-transparent text-white/90'
-    : 'bg-white text-black  border-b-1 border-b-gray/30',
->>>>>>> a90652a2721cf386d88ed0c19668a319cac9e74e
 )
 </script>
 

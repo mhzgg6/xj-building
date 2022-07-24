@@ -19,8 +19,19 @@ const imgs = [
   getAssetsImages('xj', 'png'),
   getAssetsImages('blue', 'jpg'),
   getAssetsImages('xj', 'png'),
+  getAssetsImages('blue', 'jpg'),
+  getAssetsImages('xj', 'png'),
+  getAssetsImages('blue', 'jpg'),
+  getAssetsImages('xj', 'png'),
+  getAssetsImages('blue', 'jpg'),
+  getAssetsImages('xj', 'png'),
+  getAssetsImages('blue', 'jpg'),
+  getAssetsImages('xj', 'png'),
+  getAssetsImages('blue', 'jpg'),
+  getAssetsImages('xj', 'png'),
+  getAssetsImages('blue', 'jpg'),
+  getAssetsImages('xj', 'png'),
 ]
-
 const modules = [Pagination, Navigation, A11y]
 const onSwiper = (swiper) => {
   console.log(swiper)
@@ -33,9 +44,9 @@ const onSlideChange = () => {
 // 事务所
 <template>
   <div
-    class="main-image w-100%"
+    class="main-image w-100% h-100%"
     fixed
-    top-60px
+    top-0
     left-0
   >
       <!-- :autoplay="{
@@ -89,11 +100,15 @@ const onSlideChange = () => {
         </p>
       </div>
       <div class="panel-right">
-        <img src="../../public/logo_b@2x.png" alt="">
+        <img w-185px src="../../../public/logo.png" alt="">
       </div>
     </section>
 
-    <section class="main-detail-panel">
+    <section 
+      class="main-detail-panel bg-#f7f7f7"
+      pt-100px
+      pb-70px
+    >
       <div 
         class="viewer"
         w-1180px

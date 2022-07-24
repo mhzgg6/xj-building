@@ -1,2 +1,3 @@
-// 判断是否是首页
-export const isIndex = computed(() => useRoute().name === 'index')
+// 判断是否是首页 项目详情
+const names = ['project-num', 'index']
+export const isIndex = computed(() => names.includes(useRoute().name))
